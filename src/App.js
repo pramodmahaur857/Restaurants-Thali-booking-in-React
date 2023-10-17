@@ -1,25 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+import Thali from "./Component/Thali"
+import Checkout from "./Component/Checkout"
+import {BrowserRouter,Routes,Route,} from "react-router-dom"
+import{useState,useEffect} from "react"
+import Fooditem from "./Component/Fooditem"
+import {useDispatch} from "react-redux"
 
-function App() {
+// console.log(Fooditem)
+
+export default function App() {
+  const [foodData,setfoodData] = useState(Fooditem)
+  const [checkData,setcheckdata] = useState([])
+        // console.log("checkdata",checkData)
+  const dispatch = useDispatch()
+  useEffect(()=>{
+      dispatch({
+      type:"AddData",
+        payload:{
+          data:foodData
+        }
+    })
+  },[])
+  useEffect(()=>{
+      dispatch({
+      type:"CheckData",
+        payload:{
+          Data:checkData
+        }
+    })
+  },[])
+   
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Thali />}></Route>
+          <Route path="/check" element={<Checkout />}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
-  );
+  )
 }
-
-export default App;

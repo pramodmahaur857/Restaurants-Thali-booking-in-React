@@ -1,38 +1,110 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.cardcontainer{
+    width:100%;
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    margin:20px 0px;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  ::-webkit-scrollbar {
+      -webkit-appearance: none;
+      width: 10px;
   }
-  to {
-    transform: rotate(360deg);
+  ::-webkit-scrollbar-thumb {
+      border-radius: 4px;
+      background-color: rgba(0,0,0,.5);
+      -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
   }
-}
+  *{
+    font-family:Arial;
+    overflow:scroll-y;
+  }
+  .foodcard{
+    width:22%;
+    box-shadow:1px 3px 4px -1px;
+    padding:1%;
+    line-height: 22px;
+  }
+  .thalibtn{
+    padding:3%;
+    background-color:#21BA45;
+    color:white;
+    border-radius:5px;
+    border:none;
+  }
+  .thalibtn:hover{
+    background-color:purple;
+    color:white;
+  }
+  .showAddData{
+    /* background-color:gray; */
+    min-height:50px;
+  }
+  .showAddData  li{
+    display:inline;
+    margin-left:7px;
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+    word-wrap:break-word;
+    /* text-align:left; */
+  }
+  .ft{
+    background-color:green;
+    padding:2%;
+  }
+  .checkbtn{
+    padding:1%;
+    background-color:darkblue;
+    color:white;
+    border-radius:10px;
+    border:none;
+  }
+  .checkbtn:hover{
+    background-color:black;
+    color:white; 
+  }
+  .header{
+    background-color:green;
+    padding:1%;
+    margin-bottom:20px;
+    font-size:20px;
+    font-weight:bold;
+  }
+  .link{
+    font-size:25px;
+    font-weight:bold;
+    text-decoration:none;
+    color:white;
+  }
+  .result{
+    font-size:20px;
+    font-weight:bold;
+    margin-top:20px;
+    width:300px;
+    box-shadow:1px 3px 4px -1px;
+    padding:2%;
+  }
+  .dltbtn{
+    padding:3%;
+    margin-top:10px;
+    background-color:#21BA45;
+    color:white;
+    border-radius:6px;
+    border:none;
+    font-size:15px;
+  }
+  .dltbtn:hover{
+    background-color:black;
+    color:white;
+  }
+  @media screen and (max-width:800px){
+      .foodcard{
+      width:98%;
+      box-shadow:1px 3px 4px -1px;
+      padding:1%;
+    }
+    .checkbtn{
+    padding:3%;
+  }
+  }
+  
